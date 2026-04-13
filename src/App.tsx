@@ -4,20 +4,20 @@ const environment = import.meta.env.VITE_PUBLIC_ENVIRONMENT || "local";
 const version = import.meta.env.VITE_PUBLIC_VERSION || "dev-local";
 
 const notes = [
-  "Pipeline de calidad activo",
-  "Promoción controlada de develop a staging",
+  "Lint, tests y build como compuertas",
+  "Promoción por Pull Request",
   "Despliegue de staging en GitHub Pages",
-  "Alocarse"
+  "Cambio visible listo para promoción"
 ];
 
 export default function App() {
   return (
     <main className="shell">
       <section className="hero">
-        <p className="eyebrow">Laboratorio 1 · Despliegue con GitHub</p>
-        <h1>Release Board V1</h1>
+        <p className="eyebrow">Laboratorio 2 · Promoción controlada</p>
+        <h1>Release Board V2</h1>
         <p className="hero-copy">
-          Aplicación mínima para practicar pipeline, despliegue y promoción entre entornos.
+          Aplicación mínima para practicar validación automática y promoción controlada entre entornos.
         </p>
       </section>
 
@@ -25,7 +25,7 @@ export default function App() {
         <article className="card card-accent">
           <h2>Entorno actual</h2>
           <p className="badge">{environment}</p>
-          <p>Este valor cambia en cada build y nos ayuda a verificar qué entorno estamos viendo.</p>
+          <p>Este valor cambia según el entorno que construye el pipeline.</p>
         </article>
 
         <article className="card">
@@ -35,7 +35,7 @@ export default function App() {
         </article>
 
         <article className="card">
-          <h2>Qué estamos practicando</h2>
+          <h2>Qué controla el pipeline</h2>
           <ul>
             {notes.map((item) => (
               <li key={item}>{item}</li>
